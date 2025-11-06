@@ -2,5 +2,6 @@ Add GUI Elements (if I feel like it)
 Make the catagory system better
 Export graphs?
 Saving and Spending allowance
+add date to export filename (time library?)
 
 Why am I not just using Exel???????
