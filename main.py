@@ -33,12 +33,25 @@ def view_transactions(transactions):
         print("No transactions.")
         return
     total = sum(t["amount"] for t in transactions)
+    savings_target = total * 0.6
+    spending_limit = total * 0.4
+
+    total_spent = sum(t["amount"] for t in transactions if t["amount"] < 0)
+    available_funds = spending_limit + total_spent
+    
     print("\nAmount | Note")
-    print("-" * 40)
+    print("-" * 30)
     for t in transactions:
         print(f"{t['amount']:>7.2f} | {t['note']}")
-    print("-" * 40)
+    print("-" * 30)
     print(f"Total balance: ${total:.2f}")
+    print(f"Savings goal (60%): ${savings_target:.2f}")
+    print(f"Spending limit (40%): ${spending_limit:.2f}")
+    print(f"Available to spend: ${available_funds:.2f}")
+
+    if available_funds < 0:
+        print("You’ve exceeded your 40% spending limit")
+
 
 def main():
     transactions = load_transactions()
