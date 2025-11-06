@@ -1,0 +1,5 @@
+Add GUI Elements (if I feel like it)
+Make the catagory system better
+Export graphs?
+
+Why am I not just using Exel???????
